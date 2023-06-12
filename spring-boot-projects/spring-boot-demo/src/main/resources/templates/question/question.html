@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${'Question #' + question.id}"></title>
+</head>
+<body>
+    <h1 th:text="${'Question #' + question.id}"></h1>
+    <p th:text="${question.title}"/>
+    <p th:if="${question.description}" th:text="${question.description}" />
+    <h2>Please vote</h2>
+    <form method="post">
+        <label> Agree
+            <input type="radio" value="on" name="agree" />
+        </label>
+        <label> Disagree
+            <input type="radio" value="off" name="agree" />
+        </label>
+        <br/>
+        <input type="submit">
+    </form>
+</body>
+</html>
